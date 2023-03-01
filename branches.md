@@ -38,12 +38,12 @@ C -->|bundle| D[esm];
 C -->|bundle| E[deno];
 C -->|bundle| F[umd];
 
-click A href "https://github.com/stdlib-js/stdlib/tree/develop/lib/node_modules/%40stdlib/math/strided/special/sabs"
-click B href "https://github.com/stdlib-js/math-strided-special-sabs/tree/main"
-click C href "https://github.com/stdlib-js/math-strided-special-sabs/tree/production"
-click D href "https://github.com/stdlib-js/math-strided-special-sabs/tree/esm"
-click E href "https://github.com/stdlib-js/math-strided-special-sabs/tree/deno"
-click F href "https://github.com/stdlib-js/math-strided-special-sabs/tree/umd"
+%% click A href "https://github.com/stdlib-js/stdlib/tree/develop/lib/node_modules/%40stdlib/math/strided/special/sabs"
+%% click B href "https://github.com/stdlib-js/math-strided-special-sabs/tree/main"
+%% click C href "https://github.com/stdlib-js/math-strided-special-sabs/tree/production"
+%% click D href "https://github.com/stdlib-js/math-strided-special-sabs/tree/esm"
+%% click E href "https://github.com/stdlib-js/math-strided-special-sabs/tree/deno"
+%% click F href "https://github.com/stdlib-js/math-strided-special-sabs/tree/umd"
 ```
 
 [stdlib-url]: https://github.com/stdlib-js/stdlib/tree/develop/lib/node_modules/%40stdlib/math/strided/special/sabs
