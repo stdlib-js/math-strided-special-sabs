@@ -41,30 +41,14 @@ limitations under the License.
 
 <!-- /.intro -->
 
-<section class="installation">
 
-## Installation
-
-```bash
-npm install @stdlib/math-strided-special-sabs
-```
-
-Alternatively,
-
--   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
--   If you are using Deno, visit the [`deno` branch][deno-url].
--   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
-
-The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
-
-</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-var sabs = require( '@stdlib/math-strided-special-sabs' );
+import sabs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-sabs@esm/index.mjs';
 ```
 
 #### sabs( N, x, strideX, y, strideY )
@@ -72,7 +56,7 @@ var sabs = require( '@stdlib/math-strided-special-sabs' );
 Computes the [absolute value][@stdlib/math/base/special/abs] for each element in a single-precision floating-point strided array `x` and assigns the results to elements in a single-precision floating-point strided array `y`.
 
 ```javascript
-var Float32Array = require( '@stdlib/array-float32' );
+import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@esm/index.mjs';
 
 var x = new Float32Array( [ -2.0, 1.0, 3.0, -5.0, 4.0, 0.0, -1.0, -3.0 ] );
 
@@ -92,8 +76,8 @@ The function accepts the following arguments:
 The `N` and `stride` parameters determine which elements in `x` and `y` are accessed at runtime. For example, to index every other value in `x` and to index the first `N` elements of `y` in reverse order,
 
 ```javascript
-var Float32Array = require( '@stdlib/array-float32' );
-var floor = require( '@stdlib/math-base-special-floor' );
+import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@esm/index.mjs';
+import floor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-floor@esm/index.mjs';
 
 var x = new Float32Array( [ -1.0, -2.0, -3.0, -4.0, -5.0, -6.0 ] );
 var y = new Float32Array( [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ] );
@@ -107,8 +91,8 @@ sabs( N, x, 2, y, -1 );
 Note that indexing is relative to the first index. To introduce an offset, use [`typed array`][@stdlib/array/float32] views.
 
 ```javascript
-var Float32Array = require( '@stdlib/array-float32' );
-var floor = require( '@stdlib/math-base-special-floor' );
+import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@esm/index.mjs';
+import floor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-floor@esm/index.mjs';
 
 // Initial arrays...
 var x0 = new Float32Array( [ -1.0, -2.0, -3.0, -4.0, -5.0, -6.0 ] );
@@ -129,7 +113,7 @@ sabs( N, x1, -2, y1, 1 );
 Computes the [absolute value][@stdlib/math/base/special/abs] for each element in a single-precision floating-point strided array `x` and assigns the results to elements in a single-precision floating-point strided array `y` using alternative indexing semantics.
 
 ```javascript
-var Float32Array = require( '@stdlib/array-float32' );
+import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@esm/index.mjs';
 
 var x = new Float32Array( [ -1.0, -2.0, -3.0, -4.0, -5.0 ] );
 var y = new Float32Array( [ 0.0, 0.0, 0.0, 0.0, 0.0 ] );
@@ -146,8 +130,8 @@ The function accepts the following additional arguments:
 While [`typed array`][@stdlib/array/float32] views mandate a view offset based on the underlying `buffer`, the `offsetX` and `offsetY` parameters support indexing semantics based on starting indices. For example, to index every other value in `x` starting from the second value and to index the last `N` elements in `y`,
 
 ```javascript
-var Float32Array = require( '@stdlib/array-float32' );
-var floor = require( '@stdlib/math-base-special-floor' );
+import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@esm/index.mjs';
+import floor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-floor@esm/index.mjs';
 
 var x = new Float32Array( [ -1.0, -2.0, -3.0, -4.0, -5.0, -6.0 ] );
 var y = new Float32Array( [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ] );
@@ -174,11 +158,16 @@ sabs.ndarray( N, x, 2, 1, y, -1, y.length-1 );
 
 <!-- eslint no-undef: "error" -->
 
-```javascript
-var round = require( '@stdlib/math-base-special-round' );
-var randu = require( '@stdlib/random-base-randu' );
-var Float32Array = require( '@stdlib/array-float32' );
-var sabs = require( '@stdlib/math-strided-special-sabs' );
+```html
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script type="module">
+
+import round from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-round@esm/index.mjs';
+import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@esm/index.mjs';
+import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@esm/index.mjs';
+import sabs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-sabs@esm/index.mjs';
 
 var x = new Float32Array( 10 );
 var y = new Float32Array( 10 );
@@ -192,6 +181,10 @@ console.log( y );
 
 sabs.ndarray( x.length, x, 1, 0, y, -1, y.length-1 );
 console.log( y );
+
+</script>
+</body>
+</html>
 ```
 
 </section>
@@ -200,111 +193,7 @@ console.log( y );
 
 <!-- C interface documentation. -->
 
-* * *
 
-<section class="c">
-
-## C APIs
-
-<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
-
-<section class="intro">
-
-</section>
-
-<!-- /.intro -->
-
-<!-- C usage documentation. -->
-
-<section class="usage">
-
-### Usage
-
-```c
-#include "stdlib/math/strided/special/sabs.h"
-```
-
-#### stdlib_strided_sabs( N, \*X, strideX, \*Y, strideY )
-
-Computes the absolute value for each element in a single-precision floating-point strided array `X` and assigns the results to elements in a single-precision floating-point strided array `Y`.
-
-```c
-#include <stdint.h>
-
-float X[] = { -1.0, -2.0, -3.0, -4.0, -5.0, -6.0, -7.0, -8.0 };
-float Y[] = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
-
-int64_t N = 4;
-
-stdlib_strided_sabs( N, X, 2, Y, 2 );
-```
-
-The function accepts the following arguments:
-
--   **N**: `[in] int64_t` number of indexed elements.
--   **X**: `[in] float*` input array.
--   **strideX**: `[in] int64_t` index increment for `X`.
--   **Y**: `[out] float*` output array.
--   **strideY**: `[in] int64_t` index increment for `Y`.
-
-```c
-void stdlib_strided_sabs( const int64_t N, const float *X, const int64_t strideX, float *Y, const int64_t strideY );
-```
-
-</section>
-
-<!-- /.usage -->
-
-<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
-
-<section class="notes">
-
-</section>
-
-<!-- /.notes -->
-
-<!-- C API usage examples. -->
-
-<section class="examples">
-
-### Examples
-
-```c
-#include "stdlib/math/strided/special/sabs.h"
-#include <stdint.h>
-#include <stdio.h>
-
-int main( void ) {
-    // Create an input strided array:
-    float X[] = { -1.0, -2.0, -3.0, -4.0, -5.0, -6.0, -7.0, -8.0 };
-
-    // Create an output strided array:
-    float Y[] = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
-
-    // Specify the number of elements:
-    int64_t N = 4;
-
-    // Specify the stride lengths:
-    int64_t strideX = 2;
-    int64_t strideY = 2;
-
-    // Compute the absolute value element-wise:
-    stdlib_strided_sabs( N, X, strideX, Y, strideY );
-
-    // Print the result:
-    for ( int i = 0; i < 8; i++ ) {
-        printf( "Y[ %i ] = %f\n", i, Y[ i ] );
-    }
-}
-```
-
-</section>
-
-<!-- /.examples -->
-
-</section>
-
-<!-- /.c -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -331,7 +220,7 @@ int main( void ) {
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -391,17 +280,17 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/math-strided-special-sabs/main/LICENSE
 
-[@stdlib/array/float32]: https://github.com/stdlib-js/array-float32
+[@stdlib/array/float32]: https://github.com/stdlib-js/array-float32/tree/esm
 
-[@stdlib/math/base/special/abs]: https://github.com/stdlib-js/math-base-special-abs
+[@stdlib/math/base/special/abs]: https://github.com/stdlib-js/math-base-special-abs/tree/esm
 
 <!-- <related-links> -->
 
-[@stdlib/math/strided/special/abs]: https://github.com/stdlib-js/math-strided-special-abs
+[@stdlib/math/strided/special/abs]: https://github.com/stdlib-js/math-strided-special-abs/tree/esm
 
-[@stdlib/math/strided/special/dabs]: https://github.com/stdlib-js/math-strided-special-dabs
+[@stdlib/math/strided/special/dabs]: https://github.com/stdlib-js/math-strided-special-dabs/tree/esm
 
-[@stdlib/math/strided/special/sabs2]: https://github.com/stdlib-js/math-strided-special-sabs2
+[@stdlib/math/strided/special/sabs2]: https://github.com/stdlib-js/math-strided-special-sabs2/tree/esm
 
 <!-- </related-links> -->
 
